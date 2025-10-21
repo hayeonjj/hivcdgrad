@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 8</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap');
+
+        /* --- 기본 & 전체 스타일 --- */
+        body {
+            font-family: "IBM Plex Sans KR", sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            background-color: rgb(245, 245, 245);
+            margin: 0;
+            color: #3c3c3c;
+            cursor: default;
+            overflow: hidden; 
+            -ms-overflow-style: none;
+            word-break: keep-all;
+        }
+
+        ::-webkit-scrollbar { display: none; }
+
+        /* --- 헤더(타이틀) 영역 --- */
+        .header-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex; 
+            z-index: 3;
+            background-color: rgb(245, 245, 245);
+            border-bottom: solid 2.5px#3c3c3c;
+        }
+        
+        .name {
+            width: 33.333%; /* 3등분 */
+            box-sizing: border-box;
+            padding: 10px 16px; 
+            border-right: solid 2.5px #3c3c3c;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* 마지막 name 요소의 오른쪽 테두리 제거 */
+        .name:last-child {
+            border-right: none;
+        }
+
+        h1 {
+            margin: 0; /* 핵심: h1의 기본 여백 제거 */
+            font-weight: 500;
+            font-size: 24px;
+            white-space: nowrap;
+        }
+
+        h2{
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+        
+        /* --- 메인 콘텐츠(3단 컬럼) 영역 --- */
+        .main-wrapper {
+            display: flex; /* Flexbox 레이아웃 사용 */
+            width: 100%;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* 공통 컨테이너 스타일 */
+        .container {
+            width: 33.333%; /* 3등분 */
+            height: 100%;
+            padding: 0 16px 32px 16px;
+            overflow-y: scroll; /* 세로 스크롤만 허용 */
+            box-sizing: border-box;
+            line-height: 160%;
+            letter-spacing: -0.03rem;
+            border-right: solid 2.5px #3c3c3c;
+            z-index: 1;
+        }
+        
+        /* 마지막 컨테이너의 오른쪽 테두리 제거 */
+        .container:last-child {
+            border-right: none;
+        }
+
+        .item {
+            padding-bottom: 24px;
+            border-bottom: solid 2.5px #3c3c3c;
+            
+            margin-bottom: 24px; /* gap 대신 margin으로 간격 조절 */
+        }
+        
+        .item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item img{
+            width: 100%; object-fit: contain;
+        }
+
+        /* --- 푸터(하단 이름) 영역 --- */
+        .name-bt {
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            padding: 4px 16px 6px 16px;
+            background-color: rgb(245, 245, 245);
+            border-top: solid 2.5px #3c3c3c;
+            box-sizing: border-box;
+            text-align: left;
+            user-select: none;
+            -webkit-user-select: none;
+            z-index: 2;
+        }
+        span{
+            text-decoration-line: underline;
+            text-decoration-color: #2e24ff;  
+        }
+    </style>
+</head>
+<body>
+    <header class="header-wrapper">
+        <div class="name" style="width: 50%"><h1>➊ 설치 계획</h1></div>
+        <div class="name"><h1>➋ 콘텐츠 다듬기</h1></div>
+    </header>
+
+    <main class="main-wrapper">
+        <div class="container" style="width: 50%; padding-right: 16.5%; ">
+            <div class="item" style="padding-top:72px;border-bottom: none;">
+                <div class="item" style="padding: none; border: none;">
+                    <img src = ".\스크린샷 2025-10-20 011742.png">
+                </div> 
+                <h2>확정한 것</h2>
+                • 3가지 웹사이트를 각각 하나의 스크린에 전시 - 인터랙티브한 요소가 있는 '밈 인덱스'와 '웹 게임'은 아이맥에 전시하고, '소셜 미디어 계정'은 두 아이맥 중 한 대에 티비 모니터를 연결하여 화면 공유하고 자동 새로고침 되게 만들기.
+                <br><br>
+                <h2>고민 중인 것들</h2>
+                <br>• 아이맥을 거치할 받침대의 종류? - 현재 랙 구조를 활용하려고 하는데 잘 어울릴지
+                <br>• 티비 모니터 거치 방법? - 피벗형 스탠드에 거치할지, 피벗형 월 마운트 암으로 벽에 거치할지
+                <br>• 바닥 카펫 유무? - 시각적으로 시선 끌기, 구역 나누기?
+            </div>
+        </div>
+
+
+        <div class="container" style="width: 50%; padding-right: 16.5%;">
+            <div class="item" style="padding-top:72px;border: none;" >
+                • 진행 중인 과정 - 게임 UI 통일감 주기, 밈 인덱스 UI 더 가독성 있게 수정하기.
+                <br>• 추가할 것 - 금칙어. 차별적 밈 인덱스 내에 있는 단어가 만들어지는 경우 게임을 끝내지 못하게 만들기.
+                <br><br>
+            </div>
+        </div>        
+    </main>
+
+    <footer class="name-bt">C141048 정하연</footer>
+</body>
+</html>
